@@ -1,0 +1,16 @@
+.about-container {
+    padding: 30px;
+}
+
+.text {
+    margin-bottom: 50px;
+}
+
+.img-fluid {
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+
+.img-container {
+    text-align: center;
+}

@@ -1,0 +1,80 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.img-fluid {
+    width: 150px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    vertical-align: top;
+
+}
+
+tr td {
+    background-color: white;
+}
+
+tr th {
+    color: white;
+    background-color: #0da8e4;
+}
+
+.image-container {
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+.selectQuantity {
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.subTotal {
+    margin: 10px 0px;
+}
+
+.checkoutInformation {
+    text-align: right;
+    padding: 1.5rem;
+}
+
+.checkoutButton {
+    background: #05143f;
+    border: none;
+    padding: 7px 20px;
+    color: white;
+}
+
+.checkoutButton:hover {
+    background: #0da8e4;
+    color: #fff
+}
+
+
+@media (max-width: 590px) {
+
+    .checkoutButton,
+    .removeButton,
+    .decreseButton,
+    .increseButton {
+        padding: 5px;
+
+    }
+
+}

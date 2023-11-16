@@ -1,0 +1,15 @@
+<app-navbar></app-navbar> <!--pozivanje 'navbar' componente-->
+<app-aside *ngIf="!service.isCheckout"></app-aside>
+<div class="wrapper" *ngIf="!service.isCheckout">
+    <div class="content-wrapper">
+        <router-outlet></router-outlet> <!--povezivanje svih drugih komponenti-->
+    </div>
+</div>
+
+<div class="second-wrapper" *ngIf="service.isCheckout"> <!--ako se radi u checkout komponenti, sakrij aside-->
+    <div class="content-wrapper">
+        <router-outlet></router-outlet> <!--povezivanje svih drugih komponenti-->
+    </div>
+</div>
+
+<app-footer></app-footer> <!--povezivanje 'footer' componente-->

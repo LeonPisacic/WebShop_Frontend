@@ -1,0 +1,87 @@
+.logoutButton,
+.loginButton {
+    border: 1px solid gray;
+    border-radius: 5px;
+    vertical-align: middle;
+    padding: 10px;
+    background-color: rgb(183, 181, 181);
+    transition: .6s ease;
+}
+
+.logoutButton:hover,
+.loginButton:hover {
+    color: rgb(212, 210, 210);
+    background-color: #4267B2;
+    transition: .6s ease;
+}
+
+.ordersButton {
+    background-color: rgb(183, 181, 181);
+    border: 1px solid gray;
+    border-radius: 5px;
+    vertical-align: middle;
+    padding: 9px;
+    transition: background-color 0.5s ease;
+}
+
+.ordersButton:hover {
+    background-color: #4267B2;
+
+    transition: .5s ease;
+}
+
+
+.login-status-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.login-status-user-info {
+    vertical-align: middle;
+    color: rgb(39, 38, 38);
+    line-height: 43px;
+    border: 1px;
+    padding: 0 10px;
+    border-radius: 3px;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.helloUser:hover {
+    color: #4267B2;
+}
+
+.yourOrdersText {
+    display: none;
+}
+
+@media (max-width: 930px) {
+
+    .helloUser {
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .orders-container {
+        display: block;
+    }
+
+    .yourOrdersText {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .logoutButton {
+        display: inline-block;
+    }
+
+    .ordersButton,
+    .logoutButton {
+        background-color: transparent;
+    }
+}

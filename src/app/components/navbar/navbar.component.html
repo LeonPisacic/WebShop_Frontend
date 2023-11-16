@@ -1,0 +1,42 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<header class="header">
+    <div class="logo-container" routerLink="/" style="cursor: pointer;">
+        <img src="/assets/images/logo2.avif" class="logo">
+    </div>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+    </label>
+
+
+    <nav class="navbar">
+        <div class="left-section">
+            <span style="--i:0;">
+                <input [(ngModel)]="searchInputText" type="text" placeholder="Search for data..."
+                    class="navbar-container-input" id="searchInput" (keyup.enter)="doSearch(searchInputText)">
+                <button (click)="doSearch(searchInputText)" class="searchButton">Search</button>
+            </span>
+        </div>
+
+        <div class="right-section">
+
+            <span class="btn btn-md kosarica-container" routerLink="/shopping-cart" style="--i:1;">
+                <div class="shoppingCartText" style="margin-right: 10px;">Shopping cart</div>
+
+                <button class="btn btn-md kosarica" id="shopping-cart" (click)="closeMenu()">
+                    <img src="assets/images/shopping-cart.svg">
+                    <div class='badge badge-primary' id='lblCartCount' style="display: inline-block;">{{totalQuantity}}
+                    </div>
+                </button>
+            </span>
+
+            <span style="--i:2;">
+                <app-login-status (click)="closeMenu()"></app-login-status>
+            </span>
+
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,61 @@
+<div class="container" style="overflow-x:auto;">
+    <table class="table-responsive" *ngIf="shoppingCart.length > 0" style="overflow-x:auto;">
+        <tr>
+            <th>Product Image</th>
+            <th>Product Detail</th>
+            <th style="text-align: center;">Total</th>
+        </tr>
+
+        <tr *ngFor="let tempProduct of shoppingCart">
+            <td class="image-container">
+                <img src="{{tempProduct.imageUrl}}" class="img-fluid">
+            </td>
+
+            <td>
+                <p>{{tempProduct.name}}</p>
+                <p>{{tempProduct.unitPrice}} €</p>
+            </td>
+
+            <td style="text-align: center;">
+                <label for="quantity">Quantity</label>
+
+                <div style="display: flex; justify-content: space-evenly;">
+                    <button (click)="decrementQuantity(tempProduct)" class="btn btn-primary btn-sm decreseButton"> <i
+                            class="fas fa-minus"></i></button>
+
+                    <span style="margin: 0 20px;">{{tempProduct.quantity}}</span>
+
+                    <button (click)="incrementQuantity(tempProduct)" class="btn btn-primary btn-sm increseButton"> <i
+                            class="fas fa-plus"></i></button>
+                </div>
+
+                <p class="subTotal">Sub-total {{(tempProduct.unitPrice * tempProduct.quantity).toFixed(2)}} €</p>
+                <button class="btn btn-danger removeButton" (click)="removeItemFromCart(tempProduct)">Remove</button>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="checkoutInformation">
+
+                <div style="margin-bottom: 30px;">
+                    <b>Total Quantity: {{this.totalQuantity}}</b>
+                    <p style="margin-bottom: 30px;">Shipping FREE</p>
+                </div>
+
+                <div>
+                    <b>Total Price: {{this.totalPrice.toFixed(2)}}€</b><br>
+                    <button href="checkout-page.html" style="margin-top: 20px;" class="btn checkoutButton"
+                        routerLink="/checkout">Checkout</button>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+    <div *ngIf="shoppingCart.length == 0" class="alert alert-warning col-md-12">
+        Your shopping cart is empty
+    </div>
+</div>

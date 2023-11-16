@@ -1,0 +1,47 @@
+.contact-container ul {
+    width: 100%;
+    padding-left: 0;
+}
+
+.contact-container ul li {
+    list-style: none;
+}
+
+.location,
+.informations {
+    margin-bottom: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    transition: border .5s ease;
+    /* Specify the property you want to transition */
+    border: 1px solid transparent;
+    display: inline-block;
+    text-align: center;
+    /*does not work?*/
+}
+
+.informations ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+
+.informations ul li img {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.location:hover {
+    border: 1px solid rgb(86, 79, 79);
+}
+
+.socialMedia {
+    transition: .5s ease;
+}
+
+.socialMedia:hover {
+    cursor: pointer;
+    transition: .5s ease;
+    transform: translateY(-10px);
+}

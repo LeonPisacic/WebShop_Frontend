@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <!-- Use col-md-4 for screens between 768px and 1200px -->
+        <!-- Use col-xl-3 for screens larger than 1200px -->
+        <div class="col-md-4 col-xl-3" *ngFor="let tempProduct of products"
+            style="position: relative; text-align: center; margin-bottom: 50px;">
+            <div class="product-box">
+
+                <div class="nes">
+                    <a routerLink="/productDetail/{{tempProduct.id}}">
+                        <img src="{{tempProduct.imageUrl}}" class="img-responsive">
+                    </a>
+                </div>
+
+
+                <a routerLink="/productDetail/{{tempProduct.id}}">
+                    <h1>{{tempProduct.name}}</h1>
+                </a>
+
+                <div class="priceAndButton">
+                    <div class="price">{{tempProduct.unitPrice}} €</div>
+                    <button class="btn addToCartButton" (click)="addToCart(tempProduct)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+        </div>
+
+        <div class="col">
+            <div class="row kurac" style="display: flex; flex-direction: row;">
+
+                <div class="col">
+                    <ngb-pagination class="custom-pagination" [(page)]="thePageNumber" [pageSize]="thePageSize"
+                        [collectionSize]="theTotalElements" [maxSize]="5" [boundaryLinks]="true"
+                        (pageChange)="listProducts()">
+                    </ngb-pagination>
+                </div>
+
+                <div class="col-md-3 align-middle">
+                    <label for="pageSize" id="pageSize">Page size:</label>
+                    <select #myPageSelect name="pageSize" id="pageSizeSelect"
+                        (change)="updatePageSize(myPageSelect.value)">
+                        <option value="2">2</option>
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

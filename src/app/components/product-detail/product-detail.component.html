@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div style="text-align: center;">
+        <div class="placeholder-container">
+            <img src="{{product.imageUrl}}" style="width: 30%;">
+        </div>
+
+        <h3>{{product.name}}</h3>
+        <div class="price">{{product.unitPrice| currency:'USD'}}</div>
+        <button class="btn btn-primary addToCartButton" (click)="addToCart()">Add to cart</button>
+    </div>
+
+    <div class="productDescription">
+        <h4>Product Description</h4>
+        <p>{{product.description}}</p>
+
+        <button class="btn btn-info backToProductListButton" routerLink="category">Back to Product
+            List</button>
+    </div>
+</div>
+
+<!-- <div *ngFor="let oneProduct of products">
+    {{oneProduct.name}} : {{oneProduct.unitPrice | currency:'USD'}}
+</div> -->

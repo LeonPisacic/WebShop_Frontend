@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: 200px;
+
+    background-color: #e5e5e5;
+}
+
+.content-wrapper {
+    margin: 20px;
+}
+
+.second-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+    min-height: 100vh;
+}
+
+@media (max-width: 507px) {
+    .wrapper {
+        margin-left: 30%;
+    }
+}

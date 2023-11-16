@@ -1,0 +1,9 @@
+<!-- <app-product-category-menu></app-product-category-menu> -->
+<aside>
+    <ul class="list-unstyled navbar-list">
+        <li *ngFor="let tempCategory of productCategories">
+            <a routerLink="/category/{{tempCategory.id}}"
+                routerLinkActive="active-link">{{tempCategory.categoryName}}</a>
+        </li>
+    </ul>
+</aside>

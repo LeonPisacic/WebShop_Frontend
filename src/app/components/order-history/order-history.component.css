@@ -1,0 +1,27 @@
+.container-fluid {
+    margin-top: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    vertical-align: top;
+
+}
+
+tr td {
+    background-color: white;
+}
+
+tr th {
+    color: white;
+    background-color: #0da8e4;
+}

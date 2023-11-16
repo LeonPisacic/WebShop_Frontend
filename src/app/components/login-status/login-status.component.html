@@ -1,0 +1,21 @@
+<span class="orders-container">
+    <span class="yourOrdersText" *ngIf="isLoggedIn">Your orders</span>
+    <button *ngIf="isLoggedIn" routerLink="/order-history" class="ordersButton" style="margin-left: 10px;">
+        <!-- <img src="assets/images/bxs-package.svg"> -->
+        <img src="assets/images/package.svg">
+    </button>
+</span>
+<span *ngIf="isLoggedIn && userFullName" class="login-status-user-info helloUser" routerLink="/members"
+    style="cursor: pointer;">
+    Hello {{userFullName}}
+</span>
+<span>
+    <button *ngIf="isLoggedIn" (click)="logout()" class="logoutButton">
+        Odjava <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
+</span>
+
+
+<button *ngIf="!isLoggedIn" routerLink="/login" class="loginButton" [style.margin]="isLoggedIn ? '0' : '0 20px'">
+    Prijava <i class="fa-solid fa-user"></i>
+</button>

@@ -1,0 +1,34 @@
+.text {
+    padding: 15px;
+}
+
+h1 {
+    padding: 15px;
+}
+
+.books-container,
+.mouse_pad-container,
+.coffie_mugs-container {
+    padding: 10px;
+}
+
+.img-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.img-container img {
+    transition: .5s ease;
+}
+
+.img-container img:hover {
+    transform: translateY(-1rem);
+    transition: .5s ease;
+
+    cursor: pointer;
+}
+
+.img-fluid {
+    width: 40%;
+    border-radius: 50%;
+}

@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 70px;
+    background-color: #232324;
+    /* text-align: center; */
+}
+
+.footer ul {
+    margin-bottom: 0;
+}
+
+.col {
+    padding: 30px 10px;
+}
+
+.col ul li {
+    width: 100%;
+}
+
+.col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.footer .companyInformations li {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer .companyInformations li a:hover,
+.footer .col ul li .tecaj {
+    padding-left: 0;
+    cursor: pointer;
+}
+
+.footer ul li a:hover {
+    color: rgb(48, 85, 148);
+
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+
+    padding-left: 8px;
+}
+
+.footer ul li a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #bbbbbb
+}
+
+/*-------------------------------------------------------------*/
+
+.social-links {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    padding: 20p;
+    background-color: #fff;
+    margin: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.social-links a:hover {
+    transform: rotateY(360deg);
+    background-color: rgb(10, 10, 10);
+}

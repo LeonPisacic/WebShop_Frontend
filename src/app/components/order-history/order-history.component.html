@@ -1,0 +1,25 @@
+<h3 style="text-align: center;">Your orders</h3>
+
+<div class="container-fluid" style="overflow: auto;">
+
+    <table *ngIf="orderHistory.length > 0">
+        <tr>
+            <th>Order tracking number</th>
+            <th>Total price</th>
+            <th>Total Quantity</th>
+            <th>Date created</th>
+        </tr>
+
+        <tr *ngFor="let order of orderHistory">
+            <td>{{order.orderTrackingNumber}}</td>
+            <td>{{order.totalPrice}}€</td>
+            <td>{{order.totalQuantity}}</td>
+            <td>{{order.dateCreated | date: 'medium'}}</td>
+        </tr>
+
+    </table>
+
+    <div *ngIf="orderHistory.length === 0" class="alert alert-warning col-md-12">
+        No order was created for this account!
+    </div>
+</div>

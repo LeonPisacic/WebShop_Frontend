@@ -1,0 +1,38 @@
+tr th,
+tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+}
+
+.price {
+    margin: 15px 0;
+    color: #0da8e4;
+    font-weight: 800;
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+}
+
+.addToCartButton {
+    background: #05143f;
+    border: none;
+    padding: 7px 20px;
+}
+
+.addToCartButton:hover {
+    background: #0da8e4;
+    color: #fff
+}
+
+.backToProductListButton {
+    margin-top: 20px;
+}
+
+
+.productDescription {
+    padding: 1.5rem;
+}
