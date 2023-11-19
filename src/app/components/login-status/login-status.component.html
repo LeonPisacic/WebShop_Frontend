@@ -1,21 +1,46 @@
-<span class="orders-container">
-    <span class="yourOrdersText" *ngIf="isLoggedIn">Your orders</span>
-    <button *ngIf="isLoggedIn" routerLink="/order-history" class="ordersButton" style="margin-left: 10px;">
-        <!-- <img src="assets/images/bxs-package.svg"> -->
-        <img src="assets/images/package.svg">
-    </button>
-</span>
-<span *ngIf="isLoggedIn && userFullName" class="login-status-user-info helloUser" routerLink="/members"
-    style="cursor: pointer;">
-    Hello {{userFullName}}
-</span>
-<span>
-    <button *ngIf="isLoggedIn" (click)="logout()" class="logoutButton">
-        Odjava <i class="fa-solid fa-right-from-bracket"></i>
+<span id="smallScreenButtons">
+    <div class="helloUser-container">
+        <span *ngIf="isLoggedIn && userFullName" class="login-status-user-info helloUser" routerLink="/members">
+            Hello {{userFullName}}
+        </span>
+        <img src="assets/images/user-circle-regular-24.png" *ngIf="isLoggedIn">
+    </div>
+
+    <span class="orders-container" style="display: block;">
+        <span *ngIf="isLoggedIn">My orders</span>
+        <button *ngIf="isLoggedIn" routerLink="/order-history" class="ordersButton" style="margin:0 10px;">
+            <img src="assets/images/package.svg">
+        </button>
+
+        <button *ngIf="isLoggedIn" (click)="logout()" class="logoutButton">
+            Odjava <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </span>
+
+    <button *ngIf="!isLoggedIn" routerLink="/login" class="loginButton" [style.margin]="isLoggedIn ? '0' : '0 20px'">
+        <span *ngIf="!isLoggedIn" style="margin-right: 10px;">Prijava</span>
+        <i class="fa-solid fa-user"></i>
     </button>
 </span>
 
+<span id="bigScreenButtons">
+    <span class="orders-container">
+        <button *ngIf="isLoggedIn" routerLink="/order-history" class="ordersButton" style="margin-left: 10px;">
+            <img src="assets/images/package.svg">
+        </button>
+    </span>
+    <span *ngIf="isLoggedIn && userFullName" class="login-status-user-info helloUser" routerLink="/members"
+        style="cursor: pointer;">
+        Hello {{userFullName}}
+    </span>
+    <span>
+        <button *ngIf="isLoggedIn" (click)="logout()" class="logoutButton">
+            Odjava <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </span>
 
-<button *ngIf="!isLoggedIn" routerLink="/login" class="loginButton" [style.margin]="isLoggedIn ? '0' : '0 20px'">
-    Prijava <i class="fa-solid fa-user"></i>
-</button>
+
+    <button *ngIf="!isLoggedIn" routerLink="/login" class="loginButton" [style.margin]="isLoggedIn ? '0' : '0 20px'">
+        <i class="fa-solid fa-user"></i>
+    </button>
+</span>

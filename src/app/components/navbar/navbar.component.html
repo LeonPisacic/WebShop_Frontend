@@ -1,42 +1,98 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<header class="header">
-    <div class="logo-container" routerLink="/" style="cursor: pointer;">
-        <img src="/assets/images/logo2.avif" class="logo">
+<header class="header" id="smallScreenHeader">
+    <div class="row align-items-center">
+
+        <div class="col col-auto">
+            <div class="logo-container" routerLink="/" style="cursor: pointer;">
+                <img src="/assets/images/logo2.avif" class="logo">
+            </div>
+        </div>
+
+        <div class="col col-auto" style="display: inline-block;">
+            <div class="search-container">
+                <span style="--i:0; position: relative;">
+                    <input [(ngModel)]="searchInputText" type="text" placeholder="Search for data..." id="searchInput"
+                        (keyup.enter)="doSearch(searchInputText)">
+
+
+                    <img src="/assets/images/search-alt-2-regular-24.png" (click)="doSearch(searchInputText)"
+                        style="width: 20px; height: 20px; cursor: pointer; position: absolute; right: 10px; top: 0%;">
+                </span>
+            </div>
+        </div>
+
+        <div class="col col-auto">
+            <nav class="navbar">
+                <span class="btn btn-md kosarica-container" routerLink="/shopping-cart" style="margin-right: 15px;">
+
+                    <button class="btn btn-md kosarica" id="shopping-cart" (click)="closeMenu()">
+                        <img src="assets/images/shopping-cart.svg">
+                        <div class='badge badge-primary' id='lblCartCount' style="display: inline-block;">
+                            {{totalQuantity}}
+                        </div>
+                    </button>
+                </span>
+
+                <span class="aside-container" style="padding: 9px;">
+
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+
+
+                    <ul class="menu__box">
+
+                        <span>
+                            <app-login-status (click)="closeMenu()"></app-login-status>
+                        </span>
+                        <hr style="margin: 20px;">
+                        <li *ngFor="let tempCategory of productCategories" (click)="closeMenu()">
+                            <a routerLink="/category/{{tempCategory.id}}"
+                                class="menu__item">{{tempCategory.categoryName}}</a>
+                        </li>
+                    </ul>
+
+                </span>
+
+            </nav>
+        </div>
     </div>
-
-    <input type="checkbox" id="check">
-    <label for="check" class="icons">
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <i class='bx bx-x' id="close-icon"></i>
-    </label>
+</header>
 
 
+<header class="header" id="bigScreenHeader">
     <nav class="navbar">
+
+        <div class="logo-container" routerLink="/" style="cursor: pointer;">
+            <img src="/assets/images/logo2.avif" class="logo">
+        </div>
+
         <div class="left-section">
-            <span style="--i:0;">
+            <span>
                 <input [(ngModel)]="searchInputText" type="text" placeholder="Search for data..."
                     class="navbar-container-input" id="searchInput" (keyup.enter)="doSearch(searchInputText)">
                 <button (click)="doSearch(searchInputText)" class="searchButton">Search</button>
             </span>
         </div>
-
         <div class="right-section">
-
             <span class="btn btn-md kosarica-container" routerLink="/shopping-cart" style="--i:1;">
                 <div class="shoppingCartText" style="margin-right: 10px;">Shopping cart</div>
 
-                <button class="btn btn-md kosarica" id="shopping-cart" (click)="closeMenu()">
+                <button class="btn btn-md kosarica" id="shopping-cart">
                     <img src="assets/images/shopping-cart.svg">
-                    <div class='badge badge-primary' id='lblCartCount' style="display: inline-block;">{{totalQuantity}}
+                    <div class='badge badge-primary' id='lblCartCount' style="display: inline-block;">
+                        {{totalQuantity}}
                     </div>
                 </button>
             </span>
 
-            <span style="--i:2;">
-                <app-login-status (click)="closeMenu()"></app-login-status>
+            <span>
+                <app-login-status></app-login-status>
             </span>
 
         </div>
+
     </nav>
 </header>

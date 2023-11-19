@@ -92,7 +92,7 @@
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .custom-pagination ::ng-deep .pagination {
         overflow-x: auto;
         /* Add horizontal scrolling if necessary */

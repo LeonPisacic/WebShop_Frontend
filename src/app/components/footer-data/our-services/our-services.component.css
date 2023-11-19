@@ -29,6 +29,14 @@ h1 {
 }
 
 .img-fluid {
-    width: 40%;
+    /* width: 40%; */
     border-radius: 50%;
+}
+
+
+@media (min-width: 768px) {
+    .img-fluid {
+        width: 450px;
+    }
+
 }

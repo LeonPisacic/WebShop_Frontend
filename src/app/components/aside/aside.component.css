@@ -43,3 +43,61 @@ aside ul li a:hover {
         font-size: 13px;
     }
 }
+
+:host {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 200px;
+}
+
+aside {
+    height: 100%;
+}
+
+aside ul {
+    padding: 30px;
+    top: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+aside ul li a:hover {
+    color: rgb(80, 149, 194);
+}
+
+
+@media (max-width: 507px) {
+
+    :host {
+        width: 30%;
+    }
+
+    aside ul {
+        text-align: center;
+    }
+
+    aside ul li a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 919px) {
+    aside {
+        display: none;
+    }
+}
+
+@media (min-width: 920px) {
+    aside {
+        display: block;
+    }
+}

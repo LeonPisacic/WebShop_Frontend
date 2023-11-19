@@ -36,3 +36,9 @@ th {
 .productDescription {
     padding: 1.5rem;
 }
+
+@media (min-width: 768px) {
+    .img-fluid {
+        width: 500px;
+    }
+}

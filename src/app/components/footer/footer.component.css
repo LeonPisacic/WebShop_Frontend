@@ -98,7 +98,7 @@
     text-align: center;
     width: 60px;
     height: 60px;
-    padding: 20p;
+    padding: 20px;
     background-color: #fff;
     margin: 0 10px;
     border-radius: 50%;
@@ -108,5 +108,29 @@
 
 .social-links a:hover {
     transform: rotateY(360deg);
+    /* transition: .5s ease; */
     background-color: rgb(10, 10, 10);
+}
+
+@media (max-width: 768px) {
+
+    .social-links a {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .social-links a img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-links a:hover {
+        background-color: transparent;
+        transition: .5s ease;
+        transform: translateY(-10px);
+    }
+
+    .footer ul li a:hover {
+        padding-left: 0;
+    }
 }

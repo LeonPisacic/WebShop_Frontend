@@ -1,11 +1,12 @@
 .container-fluid {
     margin-top: 20px;
+    padding: 0;
 }
 
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 95%;
+    width: 100%;
 }
 
 td,

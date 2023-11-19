@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 import Swal from 'sweetalert2'
@@ -16,7 +16,18 @@ export class LoginStatusComponent implements OnInit {
   isLoggedIn: boolean = false;
   userFullName: string;
   storage: Storage = sessionStorage;
+  isScreenGreaterThan768px = window.innerWidth > 768;
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.isScreenGreaterThan768px = window.innerWidth > 768;
+  }
+
+  getLoginButtonStyle() {
+    return {
+      'margin': this.isLoggedIn || !this.isScreenGreaterThan768px ? '0' : '0 20px'
+    };
+  }
 
   ngOnInit(): void {
 

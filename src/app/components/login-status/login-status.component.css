@@ -3,7 +3,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     vertical-align: middle;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: rgb(183, 181, 181);
     transition: .6s ease;
 }
@@ -60,28 +60,52 @@
     display: none;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 920px) {
 
-    .helloUser {
-        display: inline-block;
-        margin: 20px;
+    .helloUser-container {
+        margin-bottom: 20px
     }
 
-    .orders-container {
-        display: block;
+    .helloUser {
+        cursor: pointer;
+        display: inline-block;
     }
 
     .yourOrdersText {
         display: inline-block;
-        margin-right: 10px;
+
     }
 
     .logoutButton {
         display: inline-block;
+
     }
 
     .ordersButton,
     .logoutButton {
         background-color: transparent;
+    }
+
+    #smallScreenButtons {
+        display: block;
+    }
+
+    #bigScreenButtons {
+        display: none;
+    }
+}
+
+@media (min-width: 920px) {
+
+    .logoutButton {
+        margin-right: 10px;
+    }
+
+    #smallScreenButtons {
+        display: none;
+    }
+
+    #bigScreenButtons {
+        display: inline-block;
     }
 }

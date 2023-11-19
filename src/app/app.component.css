@@ -18,8 +18,8 @@
     min-height: 100vh;
 }
 
-@media (max-width: 507px) {
+@media (max-width: 920px) {
     .wrapper {
-        margin-left: 30%;
+        margin-left: 0px;
     }
 }
